@@ -4,7 +4,6 @@ from hangman import HangMan
 # Assets:
 logo = pygame.image.load("Assets/logo.png")
 backgroundColor = (255, 255, 102)
-hangman_color = (0, 0, 0)
 FPS = 60
 windowSize = width, height = 600, 400
 pygame.display.set_caption("HangMan")
@@ -16,8 +15,13 @@ hangMan = HangMan(6)
 
 def draw_window():
     screen.fill(backgroundColor)
-    pygame.draw.line(screen, hangman_color, (0, 0), (20, 100), 3)
+    hangMan.draw_head(screen)
+    hangMan.draw_Body(screen)
     hangMan.draw_right_arm(screen)
+    hangMan.draw_left_arm(screen)
+    hangMan.draw_left_leg(screen)
+    hangMan.draw_right_leg(screen)
+
     # We have to update the screen.
     pygame.display.update()
 
