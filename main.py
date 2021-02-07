@@ -2,19 +2,20 @@ import pygame
 from hangman import HangMan
 
 # Assets:
-logo = pygame.image.load("Assets/logo.png")
 backgroundColor = (255, 255, 102)
 FPS = 60
-windowSize = width, height = 600, 400
+WIDTH = 600
+HEIGHT = 400
 pygame.display.set_caption("HangMan")
-pygame.display.set_icon(logo)
-screen = pygame.display.set_mode(windowSize)
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+gallow = pygame.image.load('Assets/Galge.png')
 
 hangMan = HangMan(6)
 
 
 def draw_window():
     screen.fill(backgroundColor)
+    screen.blit(gallow, (203, 90))
     hangMan.draw_head(screen)
     hangMan.draw_Body(screen)
     hangMan.draw_right_arm(screen)
