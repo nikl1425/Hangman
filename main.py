@@ -2,29 +2,37 @@ import pygame
 from hangman import HangMan
 
 # Assets:
+gallow = pygame.image.load('Assets/Galge.png')
+
+
+# Game window config:
 backgroundColor = (255, 255, 102)
 FPS = 60
 WIDTH = 600
 HEIGHT = 400
-pygame.display.set_caption("HangMan")
+black = (0, 0, 0)
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-gallow = pygame.image.load('Assets/Galge.png')
+pygame.display.set_caption("HangMan")
 
-hangMan = HangMan(6)
+# Game config:
+LIVES = 0
 
+# Objects:
+hangMan = HangMan(LIVES, screen, black)
+easy_words = ["apple", "peach", "lemon", 'lime']
+medium_words = ['pineapple', 'grapefruit', 'watermelon', 'pomegranate']
+hard_words = ['blackberry', 'blood orange', 'gooseberry']
 
 def draw_window():
     screen.fill(backgroundColor)
     screen.blit(gallow, (203, 90))
-    hangMan.draw_head(screen)
-    hangMan.draw_Body(screen)
-    hangMan.draw_right_arm(screen)
-    hangMan.draw_left_arm(screen)
-    hangMan.draw_left_leg(screen)
-    hangMan.draw_right_leg(screen)
+
+    hangMan.draw_man()
 
     # We have to update the screen.
     pygame.display.update()
+
+
 
 
 def main():
