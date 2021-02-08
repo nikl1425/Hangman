@@ -5,7 +5,6 @@ import pygame
 
 class HangMan:
 
-
     def __init__(self, lives, window, color):
         self.lives = lives
         self.window = window
