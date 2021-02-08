@@ -1,6 +1,8 @@
 import pygame
 from hangman import HangMan
 from button import Letter
+import random
+
 
 # Assets:
 gallow = pygame.image.load('Assets/Galge.png')
@@ -24,10 +26,21 @@ medium_words = ['pineapple', 'grapefruit', 'watermelon', 'pomegranate']
 hard_words = ['blackberry', 'blood orange', 'gooseberry']
 
 
+
+def choose_fruit(fruitArray):
+    rand_int = random.randint(0, len(fruitArray))
+    chosen_fruit = fruitArray[rand_int]
+    return chosen_fruit
+
+print(choose_fruit(easy_words))
+
+
 def draw_window():
     screen.fill(backgroundColor)
     screen.blit(gallow, (203, 90))
     hangMan.draw_man()
+    pygame.draw.rect(screen, black, (395, 0, 10, 10))
+
 
     # We have to update the screen.
     pygame.display.update()
