@@ -1,9 +1,9 @@
 import pygame
 from hangman import HangMan
+from button import Letter
 
 # Assets:
 gallow = pygame.image.load('Assets/Galge.png')
-
 
 # Game window config:
 backgroundColor = (255, 255, 102)
@@ -15,7 +15,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("HangMan")
 
 # Game config:
-LIVES = 0
+LIVES = 6
 
 # Objects:
 hangMan = HangMan(LIVES, screen, black)
@@ -23,10 +23,10 @@ easy_words = ["apple", "peach", "lemon", 'lime']
 medium_words = ['pineapple', 'grapefruit', 'watermelon', 'pomegranate']
 hard_words = ['blackberry', 'blood orange', 'gooseberry']
 
+
 def draw_window():
     screen.fill(backgroundColor)
     screen.blit(gallow, (203, 90))
-
     hangMan.draw_man()
 
     # We have to update the screen.
@@ -36,13 +36,17 @@ def draw_window():
 
 
 def main():
+    # Importing clock to clock
     clock = pygame.time.Clock()
 
     run = True
 
     # Game loop
     while run:
+        # Setting 60 frames per second on all devices
         clock.tick(FPS)
+
+        # Quit game proberly on completion or quiting
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -51,7 +55,7 @@ def main():
 
     pygame.quit()
 
+
 # this simply tells the program that game only can run from this file.
 if __name__ == "__main__":
     main()
-
