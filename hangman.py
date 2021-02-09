@@ -18,7 +18,6 @@ class HangMan:
         self.draw_left_arm()
         self.draw_right_leg()
 
-
     def draw_head(self):
         if self.lives <= 5:
             pygame.draw.circle(self.window, self.color, (300, 150), 10)
