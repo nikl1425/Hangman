@@ -6,6 +6,7 @@ import random
 
 # Assets:
 gallow = pygame.image.load('Assets/Galge.png')
+background = pygame.image.load('Assets/background.png')
 
 # Game window config:
 backgroundColor = (255, 255, 102)
@@ -39,7 +40,7 @@ print(choose_fruit(easy_words))
 
 
 def draw_window():
-    screen.fill(backgroundColor)
+    screen.blit(background, (0, 0))
     screen.blit(gallow, (203, 90))
     hangMan.draw_man()
     button.draw_button()
