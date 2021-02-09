@@ -25,12 +25,13 @@ class Button:
 
     def draw_button(self):
         mousePosX, mousePosY = pygame.mouse.get_pos()
-        print(mousePosX)
+        # print(mousePosX)
         pygame.draw.rect(self.window, self.color, (self.xPos, self.yPos, self.width, self.height))
-
         if self.xPos < mousePosX < (self.width + self.xPos) and self.yPos < mousePosY < (self.height + self.yPos):
-            addText(self.window, self.text, self.xPos, self.yPos) # Stop flickering
-            pygame.draw.rect(self.window, self.pressed_color, (self.xPos, self.yPos, self.width, self.height))
+           pygame.draw.rect(self.window, self.pressed_color, (self.xPos, self.yPos, self.width, self.height))
+        addText(self.window, self.text, self.xPos, self.yPos)  # Stop flickering
+
+
 
 
 

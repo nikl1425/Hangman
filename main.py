@@ -9,7 +9,7 @@ gallow = pygame.image.load('Assets/Galge.png')
 background = pygame.image.load('Assets/background.png')
 
 
-# Game window config:
+# Game config:
 backgroundColor = (255, 255, 102)
 FPS = 60
 WIDTH = 600
@@ -19,8 +19,6 @@ green = (66, 245, 69)
 dark_green = (43, 130, 43)
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("HangMan")
-
-# Game config:
 LIVES = 6
 
 # Objects:
@@ -49,7 +47,7 @@ def draw_window():
     hangMan.draw_man()
     button.draw_button()
     # We have to update the screen.
-    pygame.display.update()
+
 
 
 def main():
@@ -69,6 +67,7 @@ def main():
                 run = False
 
         draw_window()
+        pygame.display.update()
 
     pygame.quit()
 
