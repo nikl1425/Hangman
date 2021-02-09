@@ -8,6 +8,7 @@ import random
 gallow = pygame.image.load('Assets/Galge.png')
 background = pygame.image.load('Assets/background.png')
 
+
 # Game window config:
 backgroundColor = (255, 255, 102)
 FPS = 60
@@ -27,16 +28,19 @@ hangMan = HangMan(LIVES, screen, black)
 easy_words = ["apple", "peach", "lemon", 'lime']
 medium_words = ['pineapple', 'grapefruit', 'watermelon', 'pomegranate']
 hard_words = ['blackberry', 'blood orange', 'gooseberry']
-button = Button(screen, green, dark_green, 30, 30, 40, 60)
+button = Button(screen, green, dark_green, 30, 30, 40, 60, 'hello')
 
 
 def choose_fruit(fruitArray):
     rand_int = random.randint(0, len(fruitArray)-1)
     chosen_fruit = fruitArray[rand_int]
-    return chosen_fruit
+    # split the chosen word into letters in a list
+    split_chosen_fruit = list(chosen_fruit)
+    return split_chosen_fruit
 
 
 print(choose_fruit(easy_words))
+
 
 
 def draw_window():
